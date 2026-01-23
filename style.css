@@ -1,0 +1,173 @@
+/* Светлая цветовая схема */
+:root {
+    --bg-main: #f4f7f9;          /* Светло-серый фон страницы */
+    --card-bg: #ffffff;          /* Белый фон карточек */
+    --accent-red: #d32f2f;       /* Насыщенный красный (для заголовков) */
+    --accent-blue: #0288d1;      /* Синий (для дат и ссылок) */
+    --text-main: #2c3e50;        /* Темно-синий текст (лучше читается, чем черный) */
+    --text-muted: #7f8c8d;       /* Серый текст для второстепенных деталей */
+    --shadow: 0 4px 6px rgba(0,0,0,0.05); /* Легкая тень */
+}
+
+body {
+    background-color: var(--bg-main);
+    color: var(--text-main);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Светлая шапка */
+header {
+    background: var(--card-bg);
+    border-bottom: 2px solid #e0e0e0;
+    padding: 40px 0;
+    text-align: center;
+    box-shadow: var(--shadow);
+}
+
+header h1 {
+    font-size: 2.5rem;
+    margin: 0;
+    color: var(--accent-red);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+header p {
+    color: var(--text-muted);
+    margin-top: 10px;
+    font-weight: 500;
+}
+
+/* Сетка контента */
+.main-layout {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 30px;
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+/* Карточки */
+.card {
+    background: var(--card-bg);
+    border-radius: 12px;
+    padding: 30px;
+    box-shadow: var(--shadow);
+    border: 1px solid #eee;
+}
+
+.card h2 {
+    border-bottom: 2px solid var(--bg-main);
+    padding-bottom: 10px;
+    margin-top: 0;
+    color: var(--text-main);
+}
+
+/* Новости в светлой теме */
+.news-item {
+    display: block;
+    text-decoration: none;
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    background: #fdfdfd;
+    border: 1px solid #f0f0f0;
+    transition: all 0.2s ease;
+}
+
+.news-item:hover {
+    background: #ffffff;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transform: translateY(-2px);
+    border-color: var(--accent-blue);
+}
+
+.news-date {
+    display: block;
+    color: var(--accent-blue);
+    font-weight: bold;
+    font-size: 0.85rem;
+    margin-bottom: 5px;
+}
+
+.news-title {
+    color: var(--text-main);
+    font-weight: 600;
+}
+
+/* Изображения */
+img {
+    max-width: 100%;
+    border-radius: 8px;
+    box-shadow: var(--shadow);
+}
+
+.gallery {
+    display: flex;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.gallery img {
+    width: 32%;
+    height: 120px;
+    object-fit: cover;
+}
+
+/* Адаптивность для смартфонов */
+@media (max-width: 800px) {
+    .main-layout {
+        grid-template-columns: 1fr;
+    }
+}
+
+footer {
+    text-align: center;
+    padding: 30px;
+    color: var(--text-muted);
+    font-size: 0.9rem;
+}
+/* Стили для страницы Галерея */
+.photo-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 20px;
+    margin-top: 30px;
+}
+
+.photo-card {
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.photo-card:hover {
+    transform: translateY(-5px);
+}
+
+.photo-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    display: block;
+}
+
+.photo-caption {
+    padding: 15px;
+    font-size: 0.9rem;
+    color: #333;
+    text-align: center;
+    border-top: 1px solid #eee;
+}
+
